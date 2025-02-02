@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freelancer Video Chat</title>
+    <script>
+        const ROOM_ID = "<%= roomId %>";
+        // console.log(`ROOM_ID = ${ROOM_ID}`)
+    </script>
+    <script defer src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="keys.js"></script>
+    <script defer src="prompt.js"></script>
+    <script defer src="script-freelancer.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -120,15 +129,15 @@
         <h1>Freelancer Video Chat</h1>
     </header>
     <main>
-        <div class="video-container">
-            <p>Freelancer Video Placeholder</p>
+        <div id="freelancer-video" class="video-container">
+            
         </div>
-        <div class="video-container large">
-            <p>Client Video Placeholder</p>
+        <div id="client-video" class="video-container large">
+            
         </div>
         <div class="next-question pulse">
             <h2>Recommended Next Question:</h2>
-            <p>What specific skills or experience do you have that make you well-suited for this project?</p>
+            <p id="ai-recommendations"></p>
         </div>
     </main>
     <footer>
