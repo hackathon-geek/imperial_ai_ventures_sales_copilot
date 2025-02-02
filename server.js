@@ -17,6 +17,14 @@ app.get('/', (req, res) => {
     res.redirect(`/${roomId}`);
 });
 
+app.get('/freelancer', (req, res) => {
+    res.render('freelancer', {roomId: "SALES_ROOM"})
+});
+
+app.get('/client', (req, res) => {
+    res.render('client', {roomId: "SALES_ROOM"})
+});
+
 app.get('/:room', (req, res) => {
     res.render('room', {roomId: req.params.room})
 });
